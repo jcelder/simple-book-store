@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "test": "mocha",
-    "dev:start": "nodemon src/server.js"
+    "dev:start": "nodemon src/server.js",
+    "db:create": "createdb simplebookstore && psql simplebookstore < src/models/db/schema.sql"
   },
   "repository": {
     "type": "git",
