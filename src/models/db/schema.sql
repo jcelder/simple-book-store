@@ -1,0 +1,33 @@
+CREATE TABLE books (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  author VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE genres (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE books_genres (
+  id SERIAL PRIMARY KEY,
+  book_id INT REFERENCES books (id),
+  genre_id INT REFERENCES genres (id)
+);
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  hash VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE roles (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE users_roles (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users (id),
+  role_id INT REFERENCES roles (id)
+);
