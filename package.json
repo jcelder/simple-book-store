@@ -4,7 +4,7 @@
   "description": "https://github.com/LearnersGuild/curriculum-app/tree/master/modules/Simple-Book-Store--Goal-69",
   "main": "src/server.js",
   "scripts": {
-    "test": "mocha",
+    "test": "export $NODE_ENV = 'test' && mocha",
     "dev:start": "nodemon src/server.js",
     "db:create": "createdb simplebookstore && psql simplebookstore < src/models/db/schema.sql"
   },
